@@ -6,9 +6,9 @@
  */
 
 describe("test", function() {
-	it("longitud minima de seguridad", function() {
-		expect(isValidPassword("1234567jjkh")).toBe(true);
-	});
+	/*it("cumple la longitud minima de seguridad", function() {
+		expect(isValidPassword("1234567")).toBe(true);
+	});*/
 
 	it("no cumple la longitud mínima de seguridad", function() {
 		expect(isValidPassword("123")).toBe(false);
@@ -21,6 +21,10 @@ describe("test", function() {
 
 	it("al menos una letra", function() {
 		expect(isValidPassword("1234")).toBe(false);
+	});
+
+	it("al menos dos letras con una mayúscula", function() {
+		expect(isValidPassword("aa1234")).toBe(false);
 	});
 });
 
