@@ -16,7 +16,11 @@ describe("test", function() {
 
 	it("al menos un número", function() {
 		expect(isValidPassword("abcddfdf")).toBe(false);
-		//expect(isValidPassword("a4bcddfdf")).toBe(true);
+		expect(isValidPassword("a4bcddfdf")).toBe(true);
+	});
+
+	it("al menos una letra", function() {
+		expect(isValidPassword("1234")).toBe(false);
 	});
 });
 
@@ -24,9 +28,9 @@ var isValidPassword = function(password) {
 	if (password.length < 4) {
 		return false;
 	} else {
-		if( /\d/.test(password)){
+		if (/\d/.test(password)) {
 			return true;
-		}else{
+		} else {
 			return false;
 		}
 		return true;
