@@ -5,8 +5,8 @@
  * Al menos una mayúscula
  */
 
-describe("test", function(){
-	it("longitud minima de seguridad", function(){
+describe("test", function() {
+	it("longitud minima de seguridad", function() {
 		expect(isValidPassword("1234567jjkh")).toBe(true);
 	});
 
@@ -14,14 +14,21 @@ describe("test", function(){
 		expect(isValidPassword("123")).toBe(false);
 	});
 
-	it("al menos un número", function(){
+	it("al menos un número", function() {
 		expect(isValidPassword("abcddfdf")).toBe(false);
+		//expect(isValidPassword("a4bcddfdf")).toBe(true);
 	});
 });
 
-var isValidPassword = function(password){
-	if (password.length <= 4) {
+var isValidPassword = function(password) {
+	if (password.length < 4) {
 		return false;
+	} else {
+		if( /\d/.test(password)){
+			return true;
+		}else{
+			return false;
+		}
+		return true;
 	}
-	return true;
 };
