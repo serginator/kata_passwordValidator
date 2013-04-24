@@ -13,10 +13,14 @@ describe("test", function(){
 	it("no cumple la longitud mínima de seguridad", function() {
 		expect(isValidPassword("123")).toBe(false);
 	});
+
+	it("al menos un número", function(){
+		expect(isValidPassword("abcddfdf")).toBe(false);
+	});
 });
 
 var isValidPassword = function(password){
-	if (password.length < 4) {
+	if (password.length <= 4) {
 		return false;
 	}
 	return true;
