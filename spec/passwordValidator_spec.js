@@ -1,28 +1,28 @@
 /**
- * Al menos 4 carácteres
- * Al menos un número y una letra
- * Al menos una minúscula
- * Al menos una mayúscula
+ * At least a length of four.
+ * At least a number and a letter.
+ * At least a lower case letter.
+ * At least a capital letter.
  */
 
 describe("password test", function() {
-	it("no cumple la longitud mínima de seguridad", function() {
+	it("doesn't reach the minimum security length", function() {
 		expect(isValidPassword("123")).toBe(false);
 	});
 
-	it("cumple la longitud mínima de seguridad", function() {
+	it("reach the minimum security length", function() {
 		expect(isValidPassword("123233Aa")).toBe(true);
 	});
 
-	it("al menos un número", function() {
+	it("at least a number", function() {
 		expect(isValidPassword("abcddfdf")).toBe(false);
 	});
 
-	it("al menos dos letras con una mayúscula", function() {
+	it("at least two letters with a capital letter", function() {
 		expect(isValidPassword("aa1234")).toBe(false);
 	});
 
-	it("al menos dos letras con una minuscula", function() {
+	it("at least two letters with a lower case letter", function() {
 		expect(isValidPassword("AA1234")).toBe(false);
 	});
 });

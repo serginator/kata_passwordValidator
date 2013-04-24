@@ -1,26 +1,26 @@
 var validPassword = {
-	validarLongitud: function(password) {
+	validateLength: function(password) {
 		if (password.length > 4) {
 			return true;
 		}
 		return false;
 	},
 
-	tieneAlMenosUnNumero: function(password) {
+	hasAtLeastANumber: function(password) {
 		if (/\d/.test(password)) {
 			return true;
 		}
 		return false;
 	},
 
-	tieneAlmenosUnaMayuscula: function(password) {
+	hasAtLeastACapitalLetter: function(password) {
 		if (/[A-Z]/.test(password)) {
 			return true;
 		}
 		return false;
 	},
 
-	tieneAlmenosUnaMinuscula: function(password) {
+	hasAtLeastALowerCaseLetter: function(password) {
 		if(/[a-z]/.test(password)) {
 			return true;
 		}
@@ -29,10 +29,10 @@ var validPassword = {
 };
 
 var isValidPassword = function(password) {
-	if (validPassword.validarLongitud(password) &&
-			validPassword.tieneAlMenosUnNumero(password) &&
-			validPassword.tieneAlmenosUnaMayuscula(password) &&
-			validPassword.tieneAlmenosUnaMinuscula(password)) {
+	if (validPassword.validateLength(password) &&
+			validPassword.hasAtLeastANumber(password) &&
+			validPassword.hasAtLeastACapitalLetter(password) &&
+			validPassword.hasAtLeastALowerCaseLetter(password)) {
 		return true;
 	}
 	return false;
