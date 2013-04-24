@@ -16,5 +16,8 @@ describe("test", function(){
 });
 
 var isValidPassword = function(password){
+	if (password.length < 4) {
+		return false;
+	}
 	return true;
 };
